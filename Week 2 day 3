@@ -1,0 +1,73 @@
+body {
+    background-color: #5f5f5f;
+    background-image: url("The RealBR.png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 2000px 1000px;
+    background-color: red;
+
+h1 {
+    color: white;
+    font-family: "Times new Roman", Arial;
+    font-weight: bold;
+    text-transform:uppercase;
+    text-align: center;
+    margin: 30px auto 0px auto;
+    padding: 5px 0 15px 0;
+}
+h2 {
+    color: white;
+    font-family: "Times new Roman", Arial;
+    text-align: center;
+    border-width: 3px;
+    border-style: solid;
+    border-color: white;
+    margin: 0 0 0px 380px;
+    text-decoration: underline;
+}
+pre {
+    color: #5f5f5f
+    text-algin: center;
+}
+h3 {
+    text-align: center;
+    color: white;
+    text-decoration: wavy;
+}
+.main-content {
+text-align: center;
+text-decoration: underline;
+display:inline-block;
+color: black;
+} 
+.Selectables {
+    display: inline-flex;
+    text-align: center;
+    color: white;
+    text-decoration: 
+    font: inherit;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="C:\Users\xoiv3\OneDrive\Desktop\Html stuff\main.css">
+        <title>Davids Blog</title>
+        <meta name="description" content="a blog bout me"
+        <meta name="author" content-"David Martinez"
+    </head>
+    <body>
+            <div class="Selectables">
+               ><a href="C:\Users\xoiv3\OneDrive\Desktop\flavor icecream\Contactme.html"> <h2>contact me</h2> </a>
+                <a href="C:\Users\xoiv3\OneDrive\Desktop\flavor icecream\Factsaboutme.html"> <h2>About</h2> </a> 
+                 <<a href="C:\Users\xoiv3\OneDrive\Desktop\flavor icecream\Topfoods.html"> <h2>Home</h2> </a>
+    </div> 
+<hr>
+    <div class="main content">
+    <h1>MY BLOG</h1>
+<h3>Come, and learn as I do!</h3>
+</div>
+    </body>
+</html>
+
+
