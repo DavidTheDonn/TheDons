@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="David" content="layouts">
+  <title>Website</title>
+  <link rel="stylesheet" href="Week3day1.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Product</a>
+      <a href="#">Price</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="box">
+      <h2>Dash</h2>
+      <p> Check out the dash for the company whatever that means!</p>
+      <button>More Info</button>
+    </div>
+    <div class="box">
+      <h2>Money</h2>
+      <p>Our company has alot of money, we take it from people</p>
+      <button>More Info</button>
+    </div>
+    <div class="box">
+      <h2>Budget</h2>
+      <p> as previously stated were stinking rich!</p>
+      <button>More Info</button>
+    </div>
+    <div class="box">
+      <h2>Checkbooks</h2>
+      <p> Our income isnt' exactly on the books</p>
+      <button>More Info</button>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</body>
+</html>
