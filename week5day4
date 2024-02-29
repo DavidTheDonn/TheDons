@@ -1,0 +1,97 @@
+$(document).ready(function() {
+   
+    $('.navItem').css('color', 'white');
+
+   
+    $('#nav').css('background-color', '#145');
+
+    
+    $('li:even').css('background-color', '#ccc');
+
+   
+    $('li:odd').css('background-color', '#aaa');
+
+
+    $('#myInput').val('David');
+});
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>First jQuery Project</title>
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div id="nav">
+            <a class="navItem" href="#">Home</a>
+            <a class="navItem" href="#">Pricing</a>
+            <a class="navItem" href="#">About</a>
+            <a class="navItem" href="#">Contact</a>
+        </div>
+        <div id="contentContainer">
+            <h1>My fancy website</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dapibus nibh enim, vel tempor est eleifend et. Aliquam maximus efficitur sapien, ac finibus justo accumsan non. Quisque quis nulla eget justo finibus porttitor eget in enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Proin nisi metus, faucibus sed lacinia a, dictum ac felis. Duis ullamcorper libero orci, sed maximus nunc iaculis nec.</p>
+            <p>Quisque nec pellentesque metus, vel porta quam. Proin ut semper tellus. Nullam elementum mauris at quam vehicula consectetur. Vestibulum bibendum ligula quam, et laoreet augue suscipit non. Donec non dui tempus, sagittis sem eget, tempor ante. Sed blandit sapien accumsan facilisis rutrum. Integer nec enim finibus, ornare est eget, rutrum magna. Quisque aliquet diam ac luctus ultricies. Aenean vel est pretium, dignissim quam at, elementum justo. Maecenas eget ex id felis vehicula hendrerit nec id est. Nulla facilisi.</p>
+            <ul>
+                <li>An even list item</li>
+                <li>An odd list item</li>
+                <li>An even list item</li>
+                <li>An odd list item</li>
+                <li>An even list item</li>
+                <li>An odd list item</li>
+                <li>An even list item</li>
+                <li>An odd list item</li>
+                <li>An even list item</li>
+                <li>An odd list item</li>
+                <li>An even list item</li>
+            </ul>
+            <label for="myInput">First Name: </label>
+            <input id="myInput" placeholder="First Name" type="text">
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
+1) Add jQuery into the project (bottom of the body tag)
+2) Add the app.js script tag under the jQuery script tag
+3) Go into app.js and select all the elements with the class of 'navItem'
+4) On each of the navItem elements change the color to white.
+5) Now select the element with the ID of 'nav'
+6) Give that element a background color of #145
+7) Select all the even list items
+8) Change the background color to #ccc
+9) Select all the odd list items
+10) Change the background color to #aaa
+11) Select the input tag
+12) Change the value to be your first name
+13) Push this code up to github and turn in the link to your repository in canvas
+a, p, div, h1, html, body, input {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navItem {
+    margin: 0 10px;
+}
+
+#contentContainer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 30px 10px;
+}
+
+p {
+    margin: 10px 0;
+}
