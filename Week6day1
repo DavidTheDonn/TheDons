@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="David" content="week6day1">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link rel="stylesheet" href="ProductWebsite.css">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>Product Catalog</h1>
+        </div>
+        <div id="productContainer">
+            <div id="productList"></div>
+            <div id="toggleDarkMode"><i class="fas fa-moon"></i></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="ProjectWebsite.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+#container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+#productContainer {
+    position: relative;
+}
+
+.productItem {
+    background-color: #ccc;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#toggleDarkMode {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.darkMode {
+    background-color: #222;
+    color: #fff;
+}
+
+.darkMode .productItem {
+    background-color: #444;
+    color: #fff;
+}
+$(document).ready(function() {
+    const storeItems = [
+        {
+            name: 'TV',
+            price: 800.00,
+            inStock: true,
+            details: '4K Ultra HD'
+        },
+        {
+            name: 'Phone',
+            price: 700.00,
+            inStock: false,
+            details: '5G'
+        },
+        {
+            name: 'Game Console',
+            price: 300.00,
+            inStock: true,
+            details: 'The latest and greatest'
+        },
+        {
+            name: 'Laptop',
+            price: 1200.00,
+            inStock: true,
+            details: '16GB RAM 1TB SSD'
+        },
+        {
+            name: 'Smart Watch',
+            price: 200.00,
+            inStock: false,
+            details: 'Counts your steps'
+        },
+        {
+            name: 'Headphones',
+            price: 100.00,
+            inStock: true,
+            details: 'Clearest music to be heard'
+        },
+        {
+            name: 'Keyboard',
+            price: 100.00,
+            inStock: true,
+            details: 'Types for you'
+        },
+        {
+            name: 'HDMI Cord',
+            price: 100.00,
+            inStock: true,
+            details: 'HDMI to USB type C'
+        },
+        {
+            name: 'Monitor',
+            price: 300.00,
+            inStock: true,
+            details: '4K Ultra HD'
+        },
+        {
+            name: 'Speaker',
+            price: 200.00,
+            inStock: true,
+            details: 'Clearest music to be heard'
+        },
+        {
+            name: 'Video Game',
+            price: 60.00,
+            inStock: true,
+            details: 'Enjoy for hours'
+        },
+    ];
+
+    function populateProductList() {
+        $('#productList').empty(); 
+        storeItems.forEach(item => {
+            if (item.inStock) {
+                const productInfo = `<div class="productItem">${item.name}: $${item.price} - ${item.details}</div>`;
+                $('#productList').append(productInfo);
+            }
+        });
+    }
+
+    populateProductList(); 
+
+    $('#toggleDarkMode').click(function() {
+        $('body').toggleClass('darkMode');
+    });
+});
