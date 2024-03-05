@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="David" content="week6day3/4">
+    <title>Comments Section</title>
+    <link rel="stylesheet" href="Comment.css">
+</head>
+<body>
+
+<div id="originalPost">
+    <h2>The Don:</h2>
+    <p>Who wants to wack this guy for me? if you do I got some Frank Sinatra seats for ya!</p>
+</div>
+
+<div id="commentsContainer">
+    <div id="createComment">
+        <input type="text" id="displayName" placeholder="Your Display Name">
+        <textarea id="commentText" placeholder="Write your comment here"></textarea>
+        <button id="submitComment">Submit</button>
+    </div>
+    <div id="comments"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="Comment.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+}
+
+#createComment {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    background-color: #fff;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+}
+
+#displayName, #commentText {
+    flex: 1;
+    margin-right: 10px;
+}
+
+#submitComment {
+    flex-shrink: 0;
+}
+
+
+#originalPost {
+    position: sticky;
+    top: 0;
+    background-color: #f9f9f9;
+}
+
+#commentsContainer {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+.comment {
+    border: 10px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.editMode {
+    background-color: #f0f0f0;
+}
+$(document).ready(function() {
+    $('#submitComment').click(function() {
+        var displayName = $('#displayName').val();
+        var commentText = $('#commentText').val();
+        if (displayName && commentText) {
+            var comment = $('<div class="comment"><strong>' + displayName + ':</strong> <span>' + commentText + '</span><br><button class="editComment">Edit</button> <button class="deleteComment">Delete</button></div>');
+            $('#comments').prepend(comment);
+            $('#displayName').val('');
+            $('#commentText').val('');
+        } else {
+            alert('Please enter your display name and comment text.');
+        }
+    });
+
+    $('#comments').on('click', '.deleteComment', function() {
+        $(this).parent().remove();
+    });
+
+    $('#comments').on('click', '.editComment', function() {
+        var comment = $(this).parent();
+        var span = comment.find('span');
+        var newText = prompt('Edit your comment:', span.text());
+        if (newText !== null) {
+            span.text(newText);
+            comment.addClass('editMode');
+        }
+    });
+
+    $('#comments').on('click', '.editMode', function() {
+        var comment = $(this);
+        var span = comment.find('span');
+        var newText = prompt('Edit your comment:', span.text());
+        if (newText !== null) {
+            span.text(newText);
+        }
+    });
+});
